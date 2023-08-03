@@ -1,14 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const SumCalculator = () => {
   const [numbers, setNumbers] = useState([]);
-  const [sum, setSum] = useState(0);
-
-  useEffect(() => {
-    // Calculate the sum whenever 'numbers' changes
-    const totalSum = numbers.reduce((acc, num) => acc + num, 0);
-    setSum(totalSum);
-  }, [numbers]);
+  const sum = numbers.reduce((acc, num) => acc + num, 0);
 
   const handleNumberChange = (e) => {
     const newNumber = parseInt(e.target.value);
